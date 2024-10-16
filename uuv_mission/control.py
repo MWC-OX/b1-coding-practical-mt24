@@ -1,8 +1,8 @@
 
 
-class controller:
+class Controller:
 
-    def __init__(self, k_p: float, k_d: float) -> None:
+    def __init__(self, k_p: float, k_d: float):
         self.k_p = k_p
         self.k_d = k_d
         self.previous_err = 0
