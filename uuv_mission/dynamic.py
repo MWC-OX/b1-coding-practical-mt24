@@ -78,12 +78,17 @@ class Mission:
 
     @classmethod
     def from_csv(cls, file_name: str):
-        csv_data = pd.read_csv(file_name)
+
+        # Convert to dataframe from csv
+        csv_data = pd.read_csv(file_name)  
+
+        # Extract each collum to numpy arrays
         reference = csv_data["reference"].to_numpy()
         cave_height = csv_data["cave_height"].to_numpy()
         cave_depth = csv_data["cave_depth"].to_numpy()
+
         return cls(reference, cave_height, cave_depth)
-    
+
 
 class ClosedLoop:
     def __init__(self, plant: Submarine, controller):
