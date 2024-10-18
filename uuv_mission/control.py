@@ -15,3 +15,6 @@ class Controller:
 
     def _calc_err(self, reference: float, posistion: float) -> float:
         return reference - posistion
+    
+    def reset(self):
+        self.previous_err = 0
